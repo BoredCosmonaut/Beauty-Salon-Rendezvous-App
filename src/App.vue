@@ -1,8 +1,13 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
+  <div class="main">
+      <nav class="nav">
+        <RouterLink :to="`/`" class="navText">Home</RouterLink>
+        <img src="@/assets/logo (2).png" alt="" class="logo">
+        <RouterLink :to="`/submit`" class="navText">
+          Başvuru Yapın!
+        </RouterLink>
+      </nav>
+  </div>
   <router-view/>
 </template>
 
@@ -15,16 +20,38 @@
   color: #2c3e50;
 }
 
-nav {
-  padding: 30px;
+body{
+  background-color: #E4CDDD;
+  padding: 0;
+  margin: 0;
 }
 
-nav a {
+.main {
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  height: auto;
+}
+
+.nav {
+  width: 100%;
+  height: 50px;
+  background-color: #7B1D26;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 10PX;
+  padding-bottom: 10px;
+}
+
+.navText {
+  color: white;
   font-weight: bold;
-  color: #2c3e50;
+  text-decoration: none;
 }
 
-nav a.router-link-exact-active {
-  color: #42b983;
+.logo{
+  width: 80px;
+  height: 80px;
 }
 </style>
